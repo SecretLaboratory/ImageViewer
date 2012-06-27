@@ -1,5 +1,6 @@
 (function($) {	
 		var settings = {
+			 showCaptions:true,
 			 imageSelector:'img',
 			 captionSelector:'.caption',
 		 	 displayContainer:'#displayImage',
@@ -27,15 +28,13 @@
 			
 			return this.each(function(){
 				data.images = [];
-
+				
 				$(this).find('li').each(function(){
-
-					var tmp = {
-								img:$(this).find(settings.imageSelector).attr('src'),
-								caption:$(this).find(settings.captionSelector).text()
-							  };
-
-					data.images[data.images.length] = tmp;		
+					
+					data.images[data.images.length] = {
+														img:$(this).find(settings.imageSelector).attr('src'),
+														caption:$(this).find(settings.captionSelector).text()
+							  						  };	
 				});
 
 				var domID = $(this).attr('id');
@@ -47,22 +46,28 @@
 		},
 		updateImage:function(){
 			var image = '<img src="'+data.images[data.imageIndex].img+'" id="currentDisplayImg"/>';
-			var caption = '<div class="imgcaption">'+data.images[data.imageIndex].caption+'</div>';
+			
 			$(settings.displayContainer).html(image);
 			$('#currentDisplayImg').css('opacity',0).load(methods.onImgLoad);
-			$(settings.displayContainer).append(caption);	
-			$('.imgcaption').css('opacity',0);
+			
+			if(settings.showCaptions == true){
+				var caption = '<div class="imgcaption">'+data.images[data.imageIndex].caption+'</div>';
+				$(settings.displayContainer).append(caption);	
+				$('.imgcaption').css('opacity',0);
+			}
 		},
 		onImgLoad:function(){
 			$('#currentDisplayImg').unbind('load',methods.onImgLoad);
 			$('#currentDisplayImg').animate({opacity:1},settings['fadeInDuration'],'linear');
-			$('.imgcaption').animate({opacity:1},settings['fadeInDuration'],'linear');
+			
+			if(settings.showCaptions == true){
+				$('.imgcaption').animate({opacity:1},settings['fadeInDuration'],'linear');
+			}
 		},
 		fadeOut:function(){
 			$('#currentDisplayImg').animate({opacity:0},settings['fadeOutDuration'],'linear',methods.updateImage);
 		},
 		nextImage:function(){
-			console.log('nextImage');
 			if(data.imageIndex < data.images.length-1){
 				data.imageIndex++;
 			}else{
@@ -71,8 +76,6 @@
 			methods.fadeOut();
 		},
 		prevImage:function(){
-			console.log('prevImage');
-			
 			if(data.imageIndex > 0){
 				data.imageIndex = data.imageIndex-1;
 			}else{
@@ -94,7 +97,7 @@
 		    } else if ( typeof method === 'object' || ! method ) {
 		      return methods.init.apply( this, arguments );
 		    } else {
-		      $.error( 'Method ' +  method + ' does not exist on jQuery.charactercount' );
+		      $.error( 'Method ' +  method + ' does not exist on jQuery.imageviewer' );
 		    }
 	  };
 	})( jQuery );
