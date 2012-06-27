@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ImageViewer Demo</title>
+
+		<link rel="stylesheet" href="css/reset.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="css/text.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="css/imageviewer.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+
+	</head>
+	<body>
+	
+		
+		<ul class="imagelist" id="bonggg">
+			<li>
+				<img src="assets/image1.jpg" alt="Image 1">
+				<div class="caption">Hackensack, NJ - June 2012</div>
+			</li>
+			
+			<li>
+				<img src="assets/image2.jpg" alt="Image 2">
+				<div class="caption">Hackensack, NJ - June 2012</div>
+			</li>
+			
+			<li>
+				<img src="assets/image3.jpg" alt="Image 3">
+				<div class="caption">Hackensack, NJ - June 2012</div>
+			</li>
+				
+			<li>
+				<img src="assets/image4.jpg" alt="Image 4">
+				<div class="caption">Hackensack, NJ - June 2012</div>
+			</li>
+		</ul>
+		
+		<div id="displayImage">
+		</div>
+		
+		<div style="text-align:center;color:#fff">
+			<a href="#" id="prevImg" style="color:#fff">Prev</a>
+			&nbsp;&nbsp;|&nbsp;&nbsp;
+			<a href="#" id="nextImg" style="color:#fff">Next</a>
+			
+			<br/>
+			<br/>
+			
+			<a href="#" class="linkTo" id="img_0" style="color:#fff">1</a>&nbsp;
+			<a href="#" class="linkTo" id="img_1" style="color:#fff">2</a>&nbsp;
+			<a href="#" class="linkTo" id="img_2" style="color:#fff">3</a>&nbsp;
+			<a href="#" class="linkTo" id="img_3" style="color:#fff">4</a>&nbsp;
+			
+		</div>
+		
+	</body>
+</html>
+
+<script src="js/jquery.imageviewer.js" type="text/javascript" charset="utf-8"></script>
+
+
+<script type="text/javascript">
+	var IMAGEVIEWER = {};	
+	IMAGEVIEWER.init = function(){
+		$('#bonggg').imageviewer({fadeOutDuration:200,fadeInDuration:500,startIndex:0});
+		$('#nextImg').click(IMAGEVIEWER.nextImage);
+		$('#prevImg').click(IMAGEVIEWER.prevImage);
+		$('.linkTo').click(IMAGEVIEWER.onLinkTo);
+	}
+	
+	IMAGEVIEWER.onLinkTo = function(){
+		var imgIndex = $(this).attr('id').replace('img_','');
+		$('#bonggg').imageviewer('showImage',imgIndex);
+	}
+	
+	IMAGEVIEWER.nextImage = function(){
+		$('#bonggg').imageviewer('nextImage');
+		return false;
+	}
+	
+	IMAGEVIEWER.prevImage = function(){
+		$('#bonggg').imageviewer('prevImage');
+		return false;
+	}
+	
+
+	$(document).ready(IMAGEVIEWER.init);
+</script>
