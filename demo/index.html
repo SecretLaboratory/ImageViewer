@@ -38,7 +38,7 @@
 		<div id="displayImage">
 		</div>
 		
-		<div style="text-align:center;color:#fff">
+		<div style="text-align:center;color:#fff;padding-bottom:100px">
 			<a href="#" id="prevImg" style="color:#fff">Prev</a>
 			&nbsp;&nbsp;|&nbsp;&nbsp;
 			<a href="#" id="nextImg" style="color:#fff">Next</a>
@@ -46,10 +46,10 @@
 			<br/>
 			<br/>
 			
-			<a href="#" class="linkTo" id="img_0" style="color:#fff">1</a>&nbsp;
-			<a href="#" class="linkTo" id="img_1" style="color:#fff">2</a>&nbsp;
-			<a href="#" class="linkTo" id="img_2" style="color:#fff">3</a>&nbsp;
-			<a href="#" class="linkTo" id="img_3" style="color:#fff">4</a>&nbsp;
+			<a href="#" class="linkTo" id="img_0">1</a>&nbsp;
+			<a href="#" class="linkTo" id="img_1">2</a>&nbsp;
+			<a href="#" class="linkTo" id="img_2">3</a>&nbsp;
+			<a href="#" class="linkTo" id="img_3">4</a>&nbsp;
 			
 		</div>
 		
@@ -62,27 +62,37 @@
 <script type="text/javascript">
 	var IMAGEVIEWER = {};	
 	IMAGEVIEWER.init = function(){
-		$('#bonggg').imageviewer({fadeOutDuration:200,fadeInDuration:500,startIndex:0,showCaptions:true});
+		$('#bonggg').imageviewer({fadeOutDuration:200,fadeInDuration:500,startIndex:0,showCaptions:false});
 		$('#nextImg').click(IMAGEVIEWER.nextImage);
 		$('#prevImg').click(IMAGEVIEWER.prevImage);
 		$('.linkTo').click(IMAGEVIEWER.onLinkTo);
+		IMAGEVIEWER.highlightCurrentImageLink();
 	}
 	
 	IMAGEVIEWER.onLinkTo = function(){
 		var imgIndex = $(this).attr('id').replace('img_','');
 		$('#bonggg').imageviewer('showImage',imgIndex);
+		IMAGEVIEWER.highlightCurrentImageLink();
+		return false;
+	}
+	
+	IMAGEVIEWER.highlightCurrentImageLink = function(){
+		$('.linkTo').css('color','#fff');
+		var activeID = 'img_' + $('#bonggg').imageviewer('getCurrentIndex');
+		$('#'+activeID).css('color','#00a3ff');
 	}
 	
 	IMAGEVIEWER.nextImage = function(){
 		$('#bonggg').imageviewer('nextImage');
+		IMAGEVIEWER.highlightCurrentImageLink();
 		return false;
 	}
 	
 	IMAGEVIEWER.prevImage = function(){
 		$('#bonggg').imageviewer('prevImage');
+		IMAGEVIEWER.highlightCurrentImageLink();
 		return false;
 	}
 	
-
 	$(document).ready(IMAGEVIEWER.init);
 </script>

@@ -4,6 +4,8 @@
 			 imageSelector:'img',
 			 captionSelector:'.caption',
 		 	 displayContainer:'#displayImage',
+			 imageDisplayClass:'displayImg',
+			 captionDisplayClass:'imgcaption',
 			 fadeOutDuration:500,
 			 fadeInDuration:800,
 			 startIndex:0
@@ -17,7 +19,6 @@
 	var methods = {
 		init : function(options){
 			//console.log('init imageviewer shuttle');
-			
 			if(options){
 				$.extend(settings,options);
 				
@@ -45,13 +46,14 @@
 			
 		},
 		updateImage:function(){
-			var image = '<img src="'+data.images[data.imageIndex].img+'" id="currentDisplayImg"/>';
+			var image = '<img src="'+data.images[data.imageIndex].img+'" class="'+settings.imageDisplayClass+'" id="currentDisplayImg"/>';
 			
 			$(settings.displayContainer).html(image);
+			
 			$('#currentDisplayImg').css('opacity',0).load(methods.onImgLoad);
 			
 			if(settings.showCaptions == true){
-				var caption = '<div class="imgcaption">'+data.images[data.imageIndex].caption+'</div>';
+				var caption = '<div class="'+settings.captionDisplayClass+'">'+data.images[data.imageIndex].caption+'</div>';
 				$(settings.displayContainer).append(caption);	
 				$('.imgcaption').css('opacity',0);
 			}
@@ -87,6 +89,9 @@
 		showImage:function(imgIndex){
 			data.imageIndex = imgIndex;
 			methods.fadeOut();
+		},
+		getCurrentIndex:function(){
+			return data.imageIndex;
 		}
 	};
 	
