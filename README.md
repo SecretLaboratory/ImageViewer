@@ -9,5 +9,16 @@ It works by parsing out a set of &lt;li&gt; elements, then rendering them as sin
 You use it. Word up.
 
 
+##Initializing the plugin:
 
+```html
+	<ul class="yourListClass" id="yourListID">
+		<li>
+			<img src="/asset/image1.jpg">
+			<div class="caption">Your Image Caption</div>
+		</li>
+	</ul>
+```
 
+## Version
+0.0.1
