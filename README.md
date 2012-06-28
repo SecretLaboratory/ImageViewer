@@ -49,82 +49,59 @@ This will parse through the list items, and extract the img src and text within 
 The plugin then hides the original list and renders the first image within the "displayImage" div
 
 There are a few setup parameters that may be passed into the plugin:
-
-•	**Red**
+•	**showCaptions**	
 	*Boolean*
 	Default: true
-	
-•	**Green**
-	*String*
-	Default: "img"
-	Defines which selector to use to pull the image source out of the image list.
-	
--   Blue
 
-<ul>
-	<li>
-		<b>showCaptions</b>
-		<i>Boolean</i><br/>
-		Default: true
-		<br/><br/>
-	</li>
-	<li>
-		<b>imageSelector</b>
-		<i>String</i><br/>
-		Default: "img"<br/>
-		Defines which selector to use to pull the image source out of the image list.
-		<br/><br/>
-	</li>
-	<li>
-		<b>captionSelector</b>
-		<i>String</i><br/>
-		Default: ".caption"<br/>
-		Defines which selector to use to pull the caption text.
-		<br/><br/>
-	</li>
-	<li>
-		<b>displayContainer</b>
-		<i>String</i><br/>
-		Default: "#displayImage"<br/>
-		Defines which selector of the container that is used to render out the currently displayed image
-		<br/><br/>
-	</li>
-	<li>
-		<b>imageDisplayClass</b>
-		<i>String</i><br/>
-		Default: "displayImg"<br/>
-		Define a class to be added to the currently displayed image
-		<br/><br/>
-	</li>
-	<li>
-		<b>captionDisplayClass</b>
-		<i>String</i><br/>
-		Default: "displayImg"<br/>
-		Define a class to be added to the currently displayed caption
-		<br/><br/>
-	</li>
-	<li>
-		<b>fadeInDuration</b>
-		<i>Number</i><br/>
-		Default: 800<br/>
-		Define (in milliseconds) how long the animation that fades the image in should take
-		<br/><br/>
-	</li>
-	<li>
-		<b>fadeOutDuration</b>
-		<i>Number</i><br/>
-		Default: 500<br/>
-		Define (in milliseconds) how long the animation that fades the image out should take
-		<br/><br/>
-	</li>
-	<li>
-		<b>startIndex</b>
-		<i>Number</i><br/>
-		Default: 0<br/>
-		Define which image should be displayed first (0 based array index)
-		<br/><br/>
-	</li>
-</ul>
+
+•	**imageSelector**  
+	*String*  
+	Default: "img"  
+	Defines which selector to use to pull the image source out of the image list.
+
+•	**captionSelector**  
+	*String*  
+	Default: ".caption"  
+	Defines which selector to use to pull the caption text.
+
+
+•	**displayContainer**  
+	*String*  
+	Default: "#displayImage"  
+	Defines which selector of the container that is used to render out the currently displayed image
+	
+
+•	**imageDisplayClass**  
+	*String*  
+	Default: "displayImg"  
+	Define a class to be added to the currently displayed image
+	
+
+•	**captionDisplayClass** 
+	*String*  
+	Default: "displayImg"  
+	Define a class to be added to the currently displayed caption
+	
+
+•	**fadeInDuration**  
+	*Number*  
+	Default: 800  
+	Define (in milliseconds) how long the animation that fades the image in should take
+	
+
+•	**fadeOutDuration**  
+	*Number*  
+	Default: 500  
+	Define (in milliseconds) how long the animation that fades the image out should take
+	
+
+•	**startIndex**  
+	*Number*  
+	Default: 0  
+	Define which image should be displayed first (0 based array index)
+	
+	
+	
 
 To initialize with parameters
 ```javascript
