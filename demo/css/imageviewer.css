@@ -3,9 +3,11 @@ body{
 	font-family:Helvetica,Arial,Sans-serif;
 	margin:0px;
 	width:100%;
+	height:100%;
 	font-size:12px;
 	line-height:14px;
 	padding:0px;
+	min-height:700px;
 }
 
 #nav_wrapper{
@@ -18,22 +20,26 @@ body{
 	margin-top:-60px;
 	text-align:center;
 	z-index:5;
+	display:none;
 }
 
 #displayImage{
-	position:relative;
+	position:absolute;
 	text-align:center;
+	width:100%;
 	height:100%;
 }
 
 #displayImage img{
 	border:3px solid #fff;
-	max-height:600px;
+	max-height:500px;
+
 }
 
 .displayImg{
-	position:relative;
+	position:absolute;
 	top:50%;
+	left:50%;
 }
 
 ul.imagelist{
@@ -57,7 +63,7 @@ ul.imagelist li{
 ul.imagelist img{
 	border:3px solid #fff;
 	max-width:800px;
-	max-height:550px;
+	max-height:400px;
 }
 
 .caption{
@@ -67,15 +73,13 @@ ul.imagelist img{
 	padding:15px;
 }
 
-
-
-
 .imgcaption{
+	position:absolute;
 	text-align:center;
 	color:#e3e3e3;
 	font-size:11px;
-	padding:15px;
-	min-width:700px;
+	width:100%;
+	top:50%;
 }
 
 a.navlink, a.navlink:visited, a.navlink:link{

@@ -9,7 +9,7 @@ It works by parsing out a set of &lt;li&gt; elements, then rendering them as sin
 The only requirement is JQuery (jQuery 1.3+)
 
 ## Demo
-Check it out here: http://www.secret-laboratory.com/dev/ImageViewer
+Check it out here: http://secret-laboratory.com/dev/ImageViewer/demo/
 	
 ## Usage
 ImageViewer will display a set of images defined within an unordered list one at a time, rendered into a container that you specify.
@@ -131,6 +131,15 @@ There are a few setup parameters that may be passed into the plugin:
 •	**getCurrentIndex**  
 	Return: *Number*  
 	Returns the current index being displayed
+	
+## Methods
+	ImageViewer has a few events that you can listen for
+	
+•	**ready**
+	Dispatched after the plugin has been initialized
+	
+•	**updateImage**
+	Dispatched after an image has been loaded
 	
 
 *To initialize the plugin with custom parameters*

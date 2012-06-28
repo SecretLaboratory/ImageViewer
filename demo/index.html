@@ -72,10 +72,8 @@
 <script type="text/javascript">
 	var IMAGEVIEWER = {};	
 	IMAGEVIEWER.init = function(){
-		$('#bonggg').bind('updateImage',IMAGEVIEWER.onImageUpdate);
 		$('#bonggg').bind('ready',IMAGEVIEWER.onPluginReady);
-	
-	
+		$('#bonggg').bind('updateImage',IMAGEVIEWER.onImageUpdate);
 		$('#bonggg').imageviewer({fadeOutDuration:200,fadeInDuration:500,startIndex:0,showCaptions:true});
 	
 		$('#nextImg').click(IMAGEVIEWER.nextImage);
@@ -85,15 +83,16 @@
 	}
 	
 	IMAGEVIEWER.onPluginReady = function(){
-		console.log('plugin ready');
+	//	console.log('plugin ready');
 		$('#bonggg').unbind('ready',IMAGEVIEWER.onPluginReady);
+		$('#nav_wrapper').css('opacity',0).css('display','block').animate({opacity:1},400,'linear');
 	}
 	
 	IMAGEVIEWER.onImageUpdate = function(){
-		console.log('image update :' + $('#bonggg').imageviewer('getCurrentIndex'));
-		console.log($('#displayImage').height());
-		
-	//	$('#currentDisplayImg').css('position','absolute').css('top','50%').css('margin-top',0-($('#currentDisplayImg').height()/2));
+		//center image
+	//	console.log('update image');
+		$('#currentDisplayImg').css('margin-top',0-($('#currentDisplayImg').height()/2)).css('margin-left',0-($('#currentDisplayImg').width()/2));
+		$('.imgcaption').css('margin-top',$('#currentDisplayImg').height()/2 + 20);
 	}
 	
 	IMAGEVIEWER.onLinkTo = function(){
