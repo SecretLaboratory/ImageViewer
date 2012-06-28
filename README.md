@@ -124,7 +124,7 @@ There are a few setup parameters that may be passed into the plugin:
 	Parameter: *Image Index* : String   
 	Return: *Void*  
 	Shows the image at the supplied index  
-	```javascript
+	```
 	$('#bonggg').imageviewer('showImage',2);
 	```
 	
