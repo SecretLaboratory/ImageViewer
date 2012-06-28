@@ -49,6 +49,18 @@ This will parse through the list items, and extract the img src and text within 
 The plugin then hides the original list and renders the first image within the "displayImage" div
 
 There are a few setup parameters that may be passed into the plugin:
+
+------------------------------------------------------------------------
+• <b>showCaptions</b>
+<i>Boolean</i>
+Default: true
+
+•<b>imageSelector</b>
+<i>String</i>
+Default: "img"
+Defines which selector to use to pull the image source out of the image list.
+------------------------------------------------------------------------
+
 <ul>
 	<li>
 		<b>showCaptions</b>
