@@ -105,11 +105,11 @@ There are a few setup parameters that may be passed into the plugin:
 	
 	
 
-To initialize with parameters
+*To initialize the plugin with custom parameters*
 ```javascript
 	$('#bonggg').imageviewer({fadeInDuration:1000,fadeOutDuration:1500,showCaptions:false});
 ```
-This sets the plugin's fadeInDuration to 1 second, the fadeOutDuration to 1.5 seconds and to not show captions
+This would set the plugin's fadeInDuration to 1 second, the fadeOutDuration to 1.5 seconds and to not show captions
 
 
 ## Version
