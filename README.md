@@ -150,10 +150,5 @@ ImageViewer dispatches a few events that you can listen for
 	Dispatched after an image has been loaded
 	
 
-
-
-## Version
-0.0.1
-
 ## Author
 Andy Schaaf [ secretlaboratoryllc@gmail.com ]
