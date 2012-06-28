@@ -50,16 +50,9 @@ The plugin then hides the original list and renders the first image within the "
 
 There are a few setup parameters that may be passed into the plugin:
 
-------------------------------------------------------------------------
-• <b>showCaptions</b>
-<i>Boolean</i>
-Default: true
-
-•<b>imageSelector</b>
-<i>String</i>
-Default: "img"
-Defines which selector to use to pull the image source out of the image list.
-------------------------------------------------------------------------
+-   Red
+-   Green
+-   Blue
 
 <ul>
 	<li>
