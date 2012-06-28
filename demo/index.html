@@ -68,63 +68,62 @@
 			</div>		
 		</div>
 		
+		<!-- import the plugin -->
+		<script src="../js/jquery.imageviewer.js" type="text/javascript" charset="utf-8"></script>
+
+
+		<script type="text/javascript">
+			var IMAGEVIEWER = {};	
+			IMAGEVIEWER.init = function(){
+				$('#bonggg').bind('ready',IMAGEVIEWER.onPluginReady);
+				$('#bonggg').bind('updateImage',IMAGEVIEWER.onImageUpdate);
+				$('#bonggg').imageviewer({fadeOutDuration:200,fadeInDuration:500,startIndex:0,showCaptions:true});
+
+				$('#nextImg').click(IMAGEVIEWER.nextImage);
+				$('#prevImg').click(IMAGEVIEWER.prevImage);
+				$('.linkTo').click(IMAGEVIEWER.onLinkTo);
+				IMAGEVIEWER.highlightCurrentImageLink();
+			}
+
+			IMAGEVIEWER.onPluginReady = function(){
+			//	console.log('plugin ready');
+				$('#bonggg').unbind('ready',IMAGEVIEWER.onPluginReady);
+				$('#nav_wrapper').css('opacity',0).css('display','block').animate({opacity:1},400,'linear');
+			}
+
+			IMAGEVIEWER.onImageUpdate = function(){
+				//center image
+			//	console.log('update image');
+				$('#currentDisplayImg').css('margin-top',0-($('#currentDisplayImg').height()/2)).css('margin-left',0-($('#currentDisplayImg').width()/2));
+				$('.imgcaption').css('margin-top',$('#currentDisplayImg').height()/2 + 20);
+			}
+
+			IMAGEVIEWER.onLinkTo = function(){
+				var imgIndex = $(this).attr('id').replace('img_','');
+				$('#bonggg').imageviewer('showImage',imgIndex);
+				IMAGEVIEWER.highlightCurrentImageLink();
+				return false;
+			}
+
+			IMAGEVIEWER.highlightCurrentImageLink = function(){
+				$('.linkTo').css('color','#fff');
+				var activeID = 'img_' + $('#bonggg').imageviewer('getCurrentIndex');
+				$('#'+activeID).css('color','#00a3ff');
+			}
+
+			IMAGEVIEWER.nextImage = function(){
+				$('#bonggg').imageviewer('nextImage');
+				IMAGEVIEWER.highlightCurrentImageLink();
+				return false;
+			}
+
+			IMAGEVIEWER.prevImage = function(){
+				$('#bonggg').imageviewer('prevImage');
+				IMAGEVIEWER.highlightCurrentImageLink();
+				return false;
+			}
+
+			$(document).ready(IMAGEVIEWER.init);
+		</script>
 	</body>
 </html>
-
-<!-- import the plugin -->
-<script src="../js/jquery.imageviewer.js" type="text/javascript" charset="utf-8"></script>
-
-
-<script type="text/javascript">
-	var IMAGEVIEWER = {};	
-	IMAGEVIEWER.init = function(){
-		$('#bonggg').bind('ready',IMAGEVIEWER.onPluginReady);
-		$('#bonggg').bind('updateImage',IMAGEVIEWER.onImageUpdate);
-		$('#bonggg').imageviewer({fadeOutDuration:200,fadeInDuration:500,startIndex:0,showCaptions:true});
-	
-		$('#nextImg').click(IMAGEVIEWER.nextImage);
-		$('#prevImg').click(IMAGEVIEWER.prevImage);
-		$('.linkTo').click(IMAGEVIEWER.onLinkTo);
-		IMAGEVIEWER.highlightCurrentImageLink();
-	}
-	
-	IMAGEVIEWER.onPluginReady = function(){
-	//	console.log('plugin ready');
-		$('#bonggg').unbind('ready',IMAGEVIEWER.onPluginReady);
-		$('#nav_wrapper').css('opacity',0).css('display','block').animate({opacity:1},400,'linear');
-	}
-	
-	IMAGEVIEWER.onImageUpdate = function(){
-		//center image
-	//	console.log('update image');
-		$('#currentDisplayImg').css('margin-top',0-($('#currentDisplayImg').height()/2)).css('margin-left',0-($('#currentDisplayImg').width()/2));
-		$('.imgcaption').css('margin-top',$('#currentDisplayImg').height()/2 + 20);
-	}
-	
-	IMAGEVIEWER.onLinkTo = function(){
-		var imgIndex = $(this).attr('id').replace('img_','');
-		$('#bonggg').imageviewer('showImage',imgIndex);
-		IMAGEVIEWER.highlightCurrentImageLink();
-		return false;
-	}
-	
-	IMAGEVIEWER.highlightCurrentImageLink = function(){
-		$('.linkTo').css('color','#fff');
-		var activeID = 'img_' + $('#bonggg').imageviewer('getCurrentIndex');
-		$('#'+activeID).css('color','#00a3ff');
-	}
-	
-	IMAGEVIEWER.nextImage = function(){
-		$('#bonggg').imageviewer('nextImage');
-		IMAGEVIEWER.highlightCurrentImageLink();
-		return false;
-	}
-	
-	IMAGEVIEWER.prevImage = function(){
-		$('#bonggg').imageviewer('prevImage');
-		IMAGEVIEWER.highlightCurrentImageLink();
-		return false;
-	}
-	
-	$(document).ready(IMAGEVIEWER.init);
-</script>
