@@ -48,6 +48,14 @@ To initialize the plugin we call it on the ID of the image list
 This will parse through the list items, and extract the img src and text within the caption
 The plugin then hides the original list and renders the first image within the displayImage div
 
+there are a few setup parameters that may be passed into the plugin:
+<ul>
+	<li>
+		<b>showCaptions</b>
+		Boolean
+		Default Value: true
+	</li>
+</ul>
 
 
 ## Version
