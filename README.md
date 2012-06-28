@@ -149,6 +149,8 @@ ImageViewer dispatches a few events that you can listen for
 •	**updateImage**
 	Dispatched after an image has been loaded
 	
+## License
+Licensed under the MIT License (http://www.opensource.org/licenses/mit-license.php)
 
 ## Author
 Andy Schaaf [ secretlaboratoryllc@gmail.com ]
