@@ -33,6 +33,26 @@ body{
 #displayImage img{
 	border:3px solid #fff;
 	max-height:500px;
+}
+
+#titleBar{
+	position:absolute;
+	top: 20px;
+	width: 100%;
+	color: #666;
+	font-size: 11px;
+	z-index:10;
+}
+
+.titleDisplay{
+	font-weight: bold;
+	color: #999;
+	margin-left:20px
+}
+
+#linkWrap{
+	float:right;
+	padding-right: 20px;
 
 }
 
