@@ -54,24 +54,22 @@ there are a few setup parameters that may be passed into the plugin:
 		<b>showCaptions</b>
 		<i>Boolean</i><br/>
 		Default: true<br/>
-		<br/><br/>
+		<br/>
 	</li>
 	<li>
 		<b>imageSelector</b>
 		<i>String</i><br/>
 		Default: "img"<br/>
 		Defines which selector to use to pull the image source out of the image list.
-		<br/><br/>
+		<br/>
 	</li>
 	<li>
 		<b>captionSelector</b>
 		<i>String</i><br/>
 		Default: ".caption"<br/>
 		Defines which selector to use to pull the caption text.
-		<br/><br/>
+		<br/>
 	</li>
-	
-	
 </ul>
 
 
