@@ -13,7 +13,8 @@
 
 	var data = {
 		images:[],
-		imageIndex:0
+		imageIndex:0,
+		domElementID:''
 	}
 		
 	var methods = {
@@ -39,24 +40,30 @@
 				});
 
 				var domID = $(this).attr('id');
-				$('#'+domID).css('display','none');
-
+				data.domElementID = domID;
+				$('#'+data.domElementID).css('display','none');
+				
 				methods.updateImage();
 			});
 			
 		},
 		updateImage:function(){
+			
 			var image = '<img src="'+data.images[data.imageIndex].img+'" class="'+settings.imageDisplayClass+'" id="currentDisplayImg"/>';
 			
 			$(settings.displayContainer).html(image);
 			
-			$('#currentDisplayImg').css('opacity',0).load(methods.onImgLoad);
+			
+			$('#currentDisplayImg').css({'opacity':0}).load(methods.onImgLoad);
 			
 			if(settings.showCaptions == true){
 				var caption = '<div class="'+settings.captionDisplayClass+'">'+data.images[data.imageIndex].caption+'</div>';
 				$(settings.displayContainer).append(caption);	
 				$('.imgcaption').css('opacity',0);
 			}
+			
+		//	console.log('id: ' + '#'+data.domElementID);
+			
 		},
 		onImgLoad:function(){
 			$('#currentDisplayImg').unbind('load',methods.onImgLoad);
@@ -65,6 +72,8 @@
 			if(settings.showCaptions == true){
 				$('.imgcaption').animate({opacity:1},settings['fadeInDuration'],'linear');
 			}
+			
+			$('#'+data.domElementID).trigger('updateImage');
 		},
 		fadeOut:function(){
 			$('#currentDisplayImg').animate({opacity:0},settings['fadeOutDuration'],'linear',methods.updateImage);

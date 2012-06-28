@@ -47,20 +47,19 @@
 		</div>
 		
 		<!-- navigation item setup -->
-		<div style="text-align:center;color:#fff;padding-bottom:100px">
-			<a href="#" id="prevImg" style="color:#fff">Prev</a>
-			&nbsp;&nbsp;|&nbsp;&nbsp;
-			<a href="#" id="nextImg" style="color:#fff">Next</a>
-			
-			<br/>
-			<br/>
-			
-			<a href="#" class="linkTo" id="img_0">1</a>&nbsp;
-			<a href="#" class="linkTo" id="img_1">2</a>&nbsp;
-			<a href="#" class="linkTo" id="img_2">3</a>&nbsp;
-			<a href="#" class="linkTo" id="img_3">4</a>&nbsp;
-			<a href="#" class="linkTo" id="img_4">5</a>&nbsp;
-			
+		
+		<div id="nav_wrapper">
+			<div style="padding-top:20px">
+				<a href="#" id="prevImg" class="navlink">Prev</a>
+				&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a href="#" class="linkTo navlink" id="img_0">1</a>&nbsp;
+				<a href="#" class="linkTo navlink" id="img_1">2</a>&nbsp;
+				<a href="#" class="linkTo navlink" id="img_2">3</a>&nbsp;
+				<a href="#" class="linkTo navlink" id="img_3">4</a>&nbsp;
+				<a href="#" class="linkTo navlink" id="img_4">5</a>&nbsp;
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;
+				<a href="#" id="nextImg" class="navlink">Next</a>
+			</div>		
 		</div>
 		
 	</body>
@@ -73,11 +72,17 @@
 <script type="text/javascript">
 	var IMAGEVIEWER = {};	
 	IMAGEVIEWER.init = function(){
-		$('#bonggg').imageviewer({fadeOutDuration:200,fadeInDuration:500,startIndex:0,showCaptions:false});
+		$('#bonggg').bind('updateImage',IMAGEVIEWER.onImageUpdate);
+		$('#bonggg').imageviewer({fadeOutDuration:200,fadeInDuration:500,startIndex:0,showCaptions:true});
+	
 		$('#nextImg').click(IMAGEVIEWER.nextImage);
 		$('#prevImg').click(IMAGEVIEWER.prevImage);
 		$('.linkTo').click(IMAGEVIEWER.onLinkTo);
 		IMAGEVIEWER.highlightCurrentImageLink();
+	}
+	
+	IMAGEVIEWER.onImageUpdate = function(){
+		console.log('image update');
 	}
 	
 	IMAGEVIEWER.onLinkTo = function(){
