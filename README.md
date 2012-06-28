@@ -50,8 +50,15 @@ The plugin then hides the original list and renders the first image within the "
 
 There are a few setup parameters that may be passed into the plugin:
 
--   Red
--   Green
+•	**Red**
+	*Boolean*
+	Default: true
+	
+•	**Green**
+	*String*
+	Default: "img"
+	Defines which selector to use to pull the image source out of the image list.
+	
 -   Blue
 
 <ul>
