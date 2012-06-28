@@ -1,4 +1,4 @@
-ImageViewer: a JQuery Plugin
+ImageViewer [JQuery Plugin]
 ===========
 
 ImageViewer is a jQuery plugin that converts an unordered list into a slideshow type of display for images
@@ -45,10 +45,10 @@ To initialize the plugin we call it on the ID of the image list
 ```javascript
 	$('#bonggg').imageviewer();
 ```
-This will parse through the list items, and extract the img src and text within the caption
-The plugin then hides the original list and renders the first image within the displayImage div
+This will parse through the list items, and extract the img src and text within the caption.
+The plugin then hides the original list and renders the first image within the "displayImage" div
 
-there are a few setup parameters that may be passed into the plugin:
+There are a few setup parameters that may be passed into the plugin:
 <ul>
 	<li>
 		<b>showCaptions</b>
