@@ -110,6 +110,13 @@ There are a few setup parameters that may be passed into the plugin:
 	Default: 0  
 	Define which image should be displayed first (0 based array index)
 	
+	
+*To initialize the plugin with custom parameters*
+```javascript
+	$('#bonggg').imageviewer({fadeInDuration:1000,fadeOutDuration:1500,showCaptions:false});
+```
+This would set the plugin's fadeInDuration to 1 second, the fadeOutDuration to 1.5 seconds and to not show captions
+
 
 ## Methods
 •	**nextImage**  
@@ -132,8 +139,9 @@ There are a few setup parameters that may be passed into the plugin:
 	Return: *Number*  
 	Returns the current index being displayed
 	
-## Methods
-	ImageViewer has a few events that you can listen for
+## Events
+
+ImageViewer dispatches a few events that you can listen for
 	
 •	**ready**
 	Dispatched after the plugin has been initialized
@@ -142,11 +150,6 @@ There are a few setup parameters that may be passed into the plugin:
 	Dispatched after an image has been loaded
 	
 
-*To initialize the plugin with custom parameters*
-```javascript
-	$('#bonggg').imageviewer({fadeInDuration:1000,fadeOutDuration:1500,showCaptions:false});
-```
-This would set the plugin's fadeInDuration to 1 second, the fadeOutDuration to 1.5 seconds and to not show captions
 
 
 ## Version
