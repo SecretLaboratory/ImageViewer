@@ -70,7 +70,55 @@ there are a few setup parameters that may be passed into the plugin:
 		Defines which selector to use to pull the caption text.
 		<br/><br/>
 	</li>
+	<li>
+		<b>displayContainer</b>
+		<i>String</i><br/>
+		Default: "#displayImage"<br/>
+		Defines which selector of the container that is used to render out the currently displayed image
+		<br/><br/>
+	</li>
+	<li>
+		<b>imageDisplayClass</b>
+		<i>String</i><br/>
+		Default: "displayImg"<br/>
+		Define a class to be added to the currently displayed image
+		<br/><br/>
+	</li>
+	<li>
+		<b>captionDisplayClass</b>
+		<i>String</i><br/>
+		Default: "displayImg"<br/>
+		Define a class to be added to the currently displayed caption
+		<br/><br/>
+	</li>
+	<li>
+		<b>fadeInDuration</b>
+		<i>Number</i><br/>
+		Default: 800<br/>
+		Define (in milliseconds) how long the animation that fades the image in should take
+		<br/><br/>
+	</li>
+	<li>
+		<b>fadeOutDuration</b>
+		<i>Number</i><br/>
+		Default: 500<br/>
+		Define (in milliseconds) how long the animation that fades the image out should take
+		<br/><br/>
+	</li>
+	<li>
+		<b>startIndex</b>
+		<i>Number</i><br/>
+		Default: 0<br/>
+		Define which image should be displayed first (0 based array index)
+		<br/><br/>
+	</li>
 </ul>
+
+To initialize with parameters
+```javascript
+	$('#bonggg').imageviewer({fadeInDuration:1000,fadeOutDuration:1500,showCaptions:false});
+```
+This sets the plugin's fadeInDuration to 1 second, the fadeOutDuration to 1.5 seconds and to not show captions
 
 
 ## Version
