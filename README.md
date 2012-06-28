@@ -4,6 +4,12 @@ ImageViewer [JQuery Plugin]
 ImageViewer is a jQuery plugin that converts an unordered list into a slideshow type of display for images
 
 It works by parsing out a set of &lt;li&gt; elements, then rendering them as single images to a target container
+
+## Dependencies  
+The only requirement is JQuery (jQuery 1.3+)
+
+## Demo
+Check it out here: http://www.secret-laboratory.com/dev/ImageViewer
 	
 ## Usage
 ImageViewer will display a set of images defined within an unordered list one at a time, rendered into a container that you specify.
