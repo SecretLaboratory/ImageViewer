@@ -13,25 +13,42 @@ ImageViewer also provides methods for you to navigate to next / previous images 
 Here's a basic example of how to set up our images with a simple html unordered list
 
 ```html
-	<!-- Just a regular unordered list with an img and caption within each li -->
-	<ul class="yourListClass" id="yourListID">
+	<!-- this is the list of images -->
+	<ul class="imagelist" id="bonggg">
 		<li>
-			<img src="/asset/image1.jpg">
-			<div class="caption">Your Image Caption</div>
+			<img src="assets/image1.jpg" alt="Image 1">
+			<div class="caption">Image Caption 1</div>
 		</li>
 		<li>
-			<img src="/asset/image2.jpg">
-			<div class="caption">Your Image Caption #2</div>
+			<img src="assets/image2.jpg" alt="Image 2">
+			<div class="caption">Image Caption 2</div>
 		</li>
 		<li>
-			<img src="/asset/image3.jpg">
-			<div class="caption">Your Image Caption #3</div>
+			<img src="assets/image3.jpg" alt="Image 3">
+			<div class="caption">Image Caption 3</div>
+		</li>
+		<li>
+			<img src="assets/image4.jpg" alt="Image 4">
+			<div class="caption">Image Caption 4</div>
+		</li>
+		<li>
+			<img src="assets/image5.gif" alt="Image 5">
+			<div class="caption">Awesome</div>
 		</li>
 	</ul>
-	<!-- this is the div we will be displaying our image in -->
-	<div id="displayImage"></div>
-	
+	<!-- this is the container to display the current image from the plugin -->
+	<div id="displayImage">
+	</div>
 ```
+
+To initialize the plugin we call it on the ID of the image list
+```javascript
+	$('#bonggg').imageviewer();
+```
+This will parse through the list items, and extract the img src and text within the caption
+The plugin then hides the original list and renders the first image within the displayImage div
+
+
 
 ## Version
 0.0.1
