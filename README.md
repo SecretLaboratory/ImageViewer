@@ -54,11 +54,13 @@ To initialize the plugin we call it on the ID of the image list
 This will parse through the list items, and extract the img src and text within the caption.
 The plugin then hides the original list and renders the first image within the "displayImage" div
 
+
+## Setup Parameters
 There are a few setup parameters that may be passed into the plugin:  
   
 
-•	**showCaptions**	
-	*Boolean*
+•	**showCaptions**  
+	*Boolean*  
 	Default: true
 
 
@@ -108,7 +110,27 @@ There are a few setup parameters that may be passed into the plugin:
 	Default: 0  
 	Define which image should be displayed first (0 based array index)
 	
+
+## Methods
+•	**nextImage**  
+	Return: *Void*  
+	Advances to the next image in the list. Will return to the first image when the end of the list has been reached
 	
+•	**prevImage**  
+	Return: *Void*  
+	Advances to the previous image in the list. Will return to the last image when the beginning of the list has been reached
+
+•	**showImage**
+	Parameter: *Image Index* : String   
+	Return: *Void*  
+	Shows the image at the supplied index  
+	```javascript
+	$('#bonggg').imageviewer('showImage',2);
+	```
+	
+•	**getCurrentIndex**  
+	Return: *Number*  
+	Returns the current index being displayed
 	
 
 *To initialize the plugin with custom parameters*

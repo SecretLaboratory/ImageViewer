@@ -73,6 +73,9 @@
 	var IMAGEVIEWER = {};	
 	IMAGEVIEWER.init = function(){
 		$('#bonggg').bind('updateImage',IMAGEVIEWER.onImageUpdate);
+		$('#bonggg').bind('ready',IMAGEVIEWER.onPluginReady);
+	
+	
 		$('#bonggg').imageviewer({fadeOutDuration:200,fadeInDuration:500,startIndex:0,showCaptions:true});
 	
 		$('#nextImg').click(IMAGEVIEWER.nextImage);
@@ -81,8 +84,16 @@
 		IMAGEVIEWER.highlightCurrentImageLink();
 	}
 	
+	IMAGEVIEWER.onPluginReady = function(){
+		console.log('plugin ready');
+		$('#bonggg').unbind('ready',IMAGEVIEWER.onPluginReady);
+	}
+	
 	IMAGEVIEWER.onImageUpdate = function(){
-		console.log('image update');
+		console.log('image update :' + $('#bonggg').imageviewer('getCurrentIndex'));
+		console.log($('#displayImage').height());
+		
+	//	$('#currentDisplayImg').css('position','absolute').css('top','50%').css('margin-top',0-($('#currentDisplayImg').height()/2));
 	}
 	
 	IMAGEVIEWER.onLinkTo = function(){

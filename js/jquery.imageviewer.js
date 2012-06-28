@@ -44,6 +44,8 @@
 				$('#'+data.domElementID).css('display','none');
 				
 				methods.updateImage();
+				
+				$('#'+data.domElementID).trigger('ready');
 			});
 			
 		},
