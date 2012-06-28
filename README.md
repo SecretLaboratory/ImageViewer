@@ -9,7 +9,7 @@ It works by parsing out a set of &lt;li&gt; elements, then rendering them as sin
 You use it. Word up.
 
 
-#Initializing the plugin:
+###Initializing the plugin:
 
 ```html
 	<!-- Just a regular unordered list with an img and caption within each li -->
