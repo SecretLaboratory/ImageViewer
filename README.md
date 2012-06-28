@@ -48,7 +48,9 @@ To initialize the plugin we call it on the ID of the image list
 This will parse through the list items, and extract the img src and text within the caption.
 The plugin then hides the original list and renders the first image within the "displayImage" div
 
-There are a few setup parameters that may be passed into the plugin:
+There are a few setup parameters that may be passed into the plugin:  
+  
+
 •	**showCaptions**	
 	*Boolean*
 	Default: true
@@ -77,7 +79,7 @@ There are a few setup parameters that may be passed into the plugin:
 	Define a class to be added to the currently displayed image
 	
 
-•	**captionDisplayClass** 
+•	**captionDisplayClass**  
 	*String*  
 	Default: "displayImg"  
 	Define a class to be added to the currently displayed caption
