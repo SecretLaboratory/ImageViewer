@@ -21,7 +21,6 @@
         init: function(options) {
             if (options) {
                 $.extend(settings, options);
-
                 if (options.startIndex) {
                     data.imageIndex = options.startIndex;
                 }
@@ -41,9 +40,7 @@
                 var domID = $(this).attr('id');
                 data.domElementID = domID;
                 $('#' + data.domElementID).css('display', 'none');
-
                 methods.updateImage();
-
                 $('#' + data.domElementID).trigger('ready');
             });
 
@@ -61,7 +58,7 @@
                 $(settings.displayContainer).append(caption);
                 $('.imgcaption').css('opacity', 0);
             }
-		},
+        },
         onImgLoad: function() {
             $('#currentDisplayImg').unbind('load', methods.onImgLoad);
             $('#currentDisplayImg').animate({
